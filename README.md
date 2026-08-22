@@ -1,49 +1,49 @@
 # Data Warsaw
 
-Data analytics, visualization, and practical AI experimentation from Warsaw.
+Data analytics, visualization, and practical AI systems from Warsaw.
 
 Built by Michał Domaradzki.
 
-## What I work on
+## Current Projects
 
-- Power BI and analytical reporting
-- SQL and Databricks
-- data modeling
-- data visualization and storytelling
-- Python
-- AI-assisted analytics
-- agentic workflows
-- local AI experimentation
+### DataWarsaw Website
 
-## Current Project
-
-**Data Warsaw Website**  
 https://datawarsaw.com  
 https://github.com/datawarsaw/website
 
-An experimental data-driven portfolio combining analytics, visualization, frontend interaction, and live public data.
+Public portfolio and experimentation site combining analytics, visualization, frontend interaction, Sanity CMS, and Cloudflare infrastructure.
 
-## AI Workstation
+### Scout Intelligence
 
-Ongoing experimentation with multi-model workflows, agent orchestration, local-first AI, Codex, Gemini, Grok, local LLMs, evals, and durable project memory.
+https://github.com/datawarsaw/scout-agent
+
+An always-on intelligence pipeline for source discovery, filtering, AI-assisted triage, and structured knowledge capture.
+
+### Agent Platform
+
+Reusable infrastructure and tooling for agentic development workflows:
+
+- Workstation Ops MCP — https://github.com/datawarsaw/workstation-ops-mcp
+- Code Skills — https://github.com/datawarsaw/code-skills
+- multi-model orchestration experiments
+- local and cloud model tooling
+- Codex / OpenCodex workflows
 
 ## Core Stack
 
-- Power BI
-- DAX
-- SQL
-- Databricks
+- Power BI / DAX
+- SQL / Databricks
 - Python
 - Git / GitHub
 - HTML / CSS / JavaScript
-- GSAP
+- Cloudflare
 - AI agents / LLM tooling
 
 ## Principles
 
 - Understand the problem before choosing the tool
 - Prefer simple, robust solutions
-- Verify with data
+- Verify with data and runtime evidence
 - Document durable decisions
 - Use AI as part of the workflow, not as a substitute for judgment
 
