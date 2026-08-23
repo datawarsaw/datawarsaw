@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Michał Domaradzki — Data, BI & Applied AI</title>
+  <meta name="description" content="Personal portfolio of Michał Domaradzki — data analytics, business intelligence, visualization and practical AI systems from Warsaw.">
+  <meta name="theme-color" content="#0b1514">
+  <link rel="canonical" href="https://domaradzki.com.pl/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Michał Domaradzki — Data, BI & Applied AI">
+  <meta property="og:description" content="Data analytics, business intelligence, visualization and practical AI systems from Warsaw.">
+  <meta property="og:url" content="https://domaradzki.com.pl/">
+  <meta property="og:image" content="https://avatars.githubusercontent.com/u/23432534?v=4">
+  <style>
+    :root {
+      --ink:#0b1514;
+      --paper:#f7f6f1;
+      --warm:#e9e7df;
+      --lime:#c6ff3e;
+      --teal:#0d5c52;
+      --line:rgba(11,21,20,.16);
+      --muted:#5d6865;
+      --display:"Helvetica Neue",Arial,sans-serif;
+      --serif:Georgia,"Times New Roman",serif;
+      --mono:"Courier New",Courier,monospace;
+      --pad:clamp(1.25rem,5vw,5rem);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--display);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+    a{color:inherit}
+    ::selection{background:var(--lime);color:var(--ink)}
+    .wrap{width:min(100%,1440px);margin:auto;padding-inline:var(--pad)}
+    .mono{font:400 .72rem/1.4 var(--mono);letter-spacing:.08em;text-transform:uppercase}
+    .site-header{height:84px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,.12);position:absolute;inset:0 0 auto;color:var(--paper);z-index:5;padding-inline:var(--pad)}
+    .brand{text-decoration:none;font-weight:600;letter-spacing:-.02em}
+    .brand small{display:block;font:400 .58rem/1.6 var(--mono);opacity:.58;letter-spacing:.05em;text-transform:uppercase}
+    .nav{display:flex;gap:1.4rem;align-items:center;font-size:.78rem}
+    .nav a{text-decoration:none;opacity:.72}
+    .nav a:hover{opacity:1}
+    .nav .cta{border:1px solid rgba(255,255,255,.32);padding:.55rem .8rem;opacity:1}
+    .hero{background:var(--ink);color:var(--paper);min-height:720px;padding-top:84px;position:relative;overflow:hidden}
+    .hero:before{content:"";position:absolute;inset:84px 0 0;background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);background-size:72px 72px;mask-image:linear-gradient(to bottom,#000,transparent 82%)}
+    .hero-grid{min-height:636px;display:grid;grid-template-columns:1.15fr .55fr;gap:7vw;align-items:center;position:relative}
+    .eyebrow{display:flex;align-items:center;gap:.75rem;color:rgba(255,255,255,.58);margin-bottom:2rem}
+    .dot{width:7px;height:7px;border-radius:50%;background:var(--lime);box-shadow:0 0 18px var(--lime)}
+    h1,h2,h3,p{margin-top:0}
+    h1,h2{font-weight:500;letter-spacing:-.055em;line-height:.98}
+    h1{font-size:clamp(4rem,8vw,8.8rem);margin-bottom:2rem;max-width:980px}
+    h1 em,h2 em{font-family:var(--serif);font-weight:500}
+    h1 em{color:var(--lime);display:block}
+    .hero-intro{font-size:clamp(1rem,1.4vw,1.25rem);color:rgba(255,255,255,.68);max-width:650px}
+    .hero-links{display:flex;flex-wrap:wrap;gap:.85rem;margin-top:2.3rem}
+    .button{display:inline-flex;align-items:center;gap:1.2rem;text-decoration:none;font-size:.78rem;font-weight:600;padding:.88rem 1rem;border:1px solid rgba(255,255,255,.28)}
+    .button.primary{background:var(--lime);color:var(--ink);border-color:var(--lime)}
+    .portrait{justify-self:end;width:min(100%,330px);aspect-ratio:1;border:1px solid rgba(255,255,255,.15);padding:1rem;position:relative}
+    .portrait img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.03)}
+    .portrait:after{content:"Warsaw · PL";position:absolute;right:1rem;bottom:-2rem;font:400 .62rem var(--mono);letter-spacing:.1em;color:rgba(255,255,255,.45);text-transform:uppercase}
+    section{padding-block:clamp(4.5rem,9vw,8rem)}
+    .section-head{display:grid;grid-template-columns:.55fr 1.45fr;gap:6vw;align-items:start;margin-bottom:4rem}
+    .section-head h2{font-size:clamp(3rem,6vw,6.6rem);margin:0}
+    .section-head h2 em{color:var(--teal)}
+    .section-head p{max-width:52ch;color:#4d5755;font-size:1.05rem;margin-top:.7rem}
+    .about{background:var(--warm)}
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:6vw;border-top:1px solid var(--ink);padding-top:2.2rem}
+    .lead{font-size:clamp(1.5rem,2.3vw,2.2rem);line-height:1.35;letter-spacing:-.03em;max-width:24ch}
+    .about-copy{color:#4c5754;max-width:62ch}
+    .tags{display:flex;flex-wrap:wrap;gap:.65rem;margin-top:2rem}
+    .tag{font:400 .66rem var(--mono);text-transform:uppercase;letter-spacing:.07em;border:1px solid var(--line);padding:.55rem .7rem;background:rgba(255,255,255,.25)}
+    .work{background:var(--paper)}
+    .work-grid{display:grid;grid-template-columns:repeat(2,1fr);border-top:1px solid var(--ink);border-left:1px solid var(--line)}
+    .card{min-height:310px;padding:1.5rem;display:flex;flex-direction:column;justify-content:space-between;border-right:1px solid var(--line);border-bottom:1px solid var(--line);text-decoration:none;transition:background .18s ease,transform .18s ease}
+    a.card:hover{background:var(--lime)}
+    .card-index{color:var(--teal)}
+    .card h3{font-size:clamp(1.7rem,2.6vw,2.6rem);font-weight:500;letter-spacing:-.045em;line-height:1.05;margin:1rem 0}
+    .card p{color:#52605c;max-width:44ch;margin-bottom:1.5rem}
+    .card-foot{display:flex;align-items:center;justify-content:space-between;gap:1rem;font:400 .64rem var(--mono);letter-spacing:.06em;text-transform:uppercase}
+    .card-foot span:last-child{font-size:1.1rem;color:var(--teal)}
+    .systems{background:var(--ink);color:var(--paper)}
+    .systems .section-head p{color:rgba(255,255,255,.58)}
+    .systems .section-head h2 em{color:var(--lime)}
+    .system-list{list-style:none;padding:0;margin:0;border-top:1px solid rgba(255,255,255,.16)}
+    .system-list li{display:grid;grid-template-columns:.22fr .78fr 1fr;gap:2rem;padding:1.5rem 0;border-bottom:1px solid rgba(255,255,255,.14);align-items:baseline}
+    .system-list .no{color:var(--lime)}
+    .system-list strong{font-size:1.35rem;font-weight:500;letter-spacing:-.03em}
+    .system-list p{margin:0;color:rgba(255,255,255,.56);max-width:60ch}
+    .contact{background:var(--lime)}
+    .contact-grid{display:grid;grid-template-columns:.4fr 1.2fr .4fr;gap:4vw;align-items:end}
+    .contact h2{font-size:clamp(4rem,9vw,9rem);margin:0}
+    .contact h2 em{display:block;color:var(--teal)}
+    .contact-links{display:grid;gap:.5rem;justify-items:start}
+    .contact-links a{text-decoration:none;border-bottom:1px solid;padding-bottom:.2rem;font-size:.9rem}
+    footer{background:var(--ink);color:rgba(255,255,255,.48);padding:1.2rem var(--pad);display:flex;justify-content:space-between;gap:1rem;font:400 .61rem var(--mono);letter-spacing:.06em;text-transform:uppercase}
+    @media (max-width:900px){
+      .hero-grid{grid-template-columns:1fr;padding-block:5.5rem 6rem}
+      .portrait{justify-self:start;width:210px}
+      .section-head,.about-grid,.contact-grid{grid-template-columns:1fr}
+      .work-grid{grid-template-columns:1fr}
+      .system-list li{grid-template-columns:auto 1fr}.system-list p{grid-column:2}
+      .contact-links{margin-top:2rem}
+    }
+    @media (max-width:620px){
+      .site-header{height:72px}.hero{padding-top:72px}.hero:before{inset:72px 0 0}
+      .nav a:not(.cta){display:none}
+      h1{font-size:clamp(3.3rem,17vw,5.1rem)}
+      .portrait{display:none}
+      .hero-grid{min-height:610px}
+      .section-head{margin-bottom:2.5rem}
+      .card{min-height:280px}
+      footer{flex-direction:column}
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#top">Michał Domaradzki<small>Data · BI · Applied AI</small></a>
+    <nav class="nav" aria-label="Primary navigation">
+      <a href="#work">Work</a>
+      <a href="https://github.com/datawarsaw">GitHub</a>
+      <a class="cta" href="https://www.linkedin.com/in/domaradzki-michal/">LinkedIn ↗</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow mono"><span class="dot" aria-hidden="true"></span>Personal portfolio · Warsaw</div>
+          <h1>Data, systems &amp; <em>practical AI.</em></h1>
+          <p class="hero-intro">I work at the intersection of analytics, business intelligence, visualization and AI-enabled workflows — turning messy inputs into clear decisions and useful systems.</p>
+          <div class="hero-links">
+            <a class="button primary" href="#work">Selected work <span>↓</span></a>
+            <a class="button" href="https://github.com/datawarsaw">GitHub <span>↗</span></a>
+            <a class="button" href="https://datawarsaw.com">DataWarsaw <span>↗</span></a>
+          </div>
+        </div>
+        <figure class="portrait" aria-label="Portrait of Michał Domaradzki">
+          <img src="https://avatars.githubusercontent.com/u/23432534?v=4" alt="Michał Domaradzki" width="330" height="330">
+        </figure>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="mono">01 · Profile</div>
+          <h2>Analysis before <em>decoration.</em></h2>
+        </div>
+        <div class="about-grid">
+          <p class="lead">Senior data analyst building decision-ready BI and small, robust systems around data.</p>
+          <div class="about-copy">
+            <p>My core work is Power BI, SQL and analytical storytelling. Around that, I build practical automation and AI tooling when it genuinely shortens the path from source data to a better decision.</p>
+            <p><strong>DataWarsaw</strong> is the business-facing analytics practice. This site is the personal layer: projects, experiments, working systems and selected earlier work.</p>
+            <div class="tags" aria-label="Core stack">
+              <span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">SQL</span><span class="tag">Databricks</span><span class="tag">Python</span><span class="tag">JavaScript</span><span class="tag">Cloudflare</span><span class="tag">AI Agents</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="work" id="work">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="mono">02 · Selected work</div>
+          <div>
+            <h2>Public work &amp; <em>experiments.</em></h2>
+            <p>A deliberately small selection from GitHub — current work first, with older analytical projects kept as evidence of the path rather than polished case studies.</p>
+          </div>
+        </div>
+        <div class="work-grid">
+          <a class="card" href="https://datawarsaw.com">
+            <div><span class="card-index mono">01 · Practice</span><h3>DataWarsaw</h3><p>Independent analytics practice focused on decision-ready BI, data storytelling, interactive visualization and applied AI.</p></div>
+            <div class="card-foot"><span>datawarsaw.com</span><span>↗</span></div>
+          </a>
+          <a class="card" href="https://github.com/datawarsaw/world-cup-fantasy-model">
+            <div><span class="card-index mono">02 · Python</span><h3>World Cup Fantasy Pipeline</h3><p>Transparent pandas pipeline for building fantasy shortlists from fixtures, player history, team strength, value and current-form signals.</p></div>
+            <div class="card-foot"><span>GitHub repository</span><span>↗</span></div>
+          </a>
+          <a class="card" href="https://github.com/datawarsaw/Silvano">
+            <div><span class="card-index mono">03 · BI / SQL</span><h3>Power BI + SQL case study</h3><p>An earlier end-to-end analytical exercise with SQL data cleaning, a Power BI model and dashboard artifacts.</p></div>
+            <div class="card-foot"><span>GitHub repository</span><span>↗</span></div>
+          </a>
+          <a class="card" href="https://github.com/datawarsaw/WizualnaAnalitykaDanychPW">
+            <div><span class="card-index mono">04 · Visual analytics</span><h3>Visual Data Analytics</h3><p>Coursework and experiments from visual data analytics studies at Warsaw University of Technology.</p></div>
+            <div class="card-foot"><span>GitHub repository</span><span>↗</span></div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="systems">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="mono">03 · Current systems</div>
+          <div><h2>Things I’m <em>building now.</em></h2><p>Not every useful project needs to be a public repository. These are active systems shaping how I work with AI and information.</p></div>
+        </div>
+        <ol class="system-list">
+          <li><span class="no mono">01</span><strong>Agent Platform</strong><p>Reusable infrastructure for agentic development workflows: local workstation operations, code skills, multi-model orchestration and verification-first tooling.</p></li>
+          <li><span class="no mono">02</span><strong>Scout Intelligence</strong><p>An always-on pipeline for source discovery, filtering, AI-assisted triage and structured knowledge capture.</p></li>
+          <li><span class="no mono">03</span><strong>DataWarsaw Website</strong><p>A performance-first public site combining analytics storytelling, interactive data modules, Sanity CMS and Cloudflare infrastructure.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="wrap contact-grid">
+        <div class="mono">04 · Contact</div>
+        <h2>Find me <em>online.</em></h2>
+        <div class="contact-links">
+          <a href="https://www.linkedin.com/in/domaradzki-michal/">LinkedIn ↗</a>
+          <a href="https://github.com/datawarsaw">GitHub ↗</a>
+          <a href="https://datawarsaw.com">DataWarsaw ↗</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer><span>© 2026 Michał Domaradzki</span><span>Warsaw, Poland · Built without a framework</span></footer>
+</body>
+</html>
