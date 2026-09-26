@@ -3,220 +3,438 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Michał Domaradzki — Data, BI & Applied AI</title>
-  <meta name="description" content="Personal portfolio of Michał Domaradzki — data analytics, business intelligence, visualization and practical AI systems from Warsaw.">
-  <meta name="theme-color" content="#0b1514">
-  <link rel="canonical" href="https://domaradzki.com.pl/">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Michał Domaradzki — Data, BI & Applied AI">
-  <meta property="og:description" content="Data analytics, business intelligence, visualization and practical AI systems from Warsaw.">
-  <meta property="og:url" content="https://domaradzki.com.pl/">
-  <meta property="og:image" content="https://avatars.githubusercontent.com/u/23432534?v=4">
-  <style>
-    :root {
-      --ink:#0b1514;
-      --paper:#f7f6f1;
-      --warm:#e9e7df;
-      --lime:#c6ff3e;
-      --teal:#0d5c52;
-      --line:rgba(11,21,20,.16);
-      --muted:#5d6865;
-      --display:"Helvetica Neue",Arial,sans-serif;
-      --serif:Georgia,"Times New Roman",serif;
-      --mono:"Courier New",Courier,monospace;
-      --pad:clamp(1.25rem,5vw,5rem);
-    }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--display);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
-    a{color:inherit}
-    ::selection{background:var(--lime);color:var(--ink)}
-    .wrap{width:min(100%,1440px);margin:auto;padding-inline:var(--pad)}
-    .mono{font:400 .72rem/1.4 var(--mono);letter-spacing:.08em;text-transform:uppercase}
-    .site-header{height:84px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,.12);position:absolute;inset:0 0 auto;color:var(--paper);z-index:5;padding-inline:var(--pad)}
-    .brand{text-decoration:none;font-weight:600;letter-spacing:-.02em}
-    .brand small{display:block;font:400 .58rem/1.6 var(--mono);opacity:.58;letter-spacing:.05em;text-transform:uppercase}
-    .nav{display:flex;gap:1.4rem;align-items:center;font-size:.78rem}
-    .nav a{text-decoration:none;opacity:.72}
-    .nav a:hover{opacity:1}
-    .nav .cta{border:1px solid rgba(255,255,255,.32);padding:.55rem .8rem;opacity:1}
-    .hero{background:var(--ink);color:var(--paper);min-height:720px;padding-top:84px;position:relative;overflow:hidden}
-    .hero:before{content:"";position:absolute;inset:84px 0 0;background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);background-size:72px 72px;mask-image:linear-gradient(to bottom,#000,transparent 82%)}
-    .hero-grid{min-height:636px;display:grid;grid-template-columns:1.15fr .55fr;gap:7vw;align-items:center;position:relative}
-    .eyebrow{display:flex;align-items:center;gap:.75rem;color:rgba(255,255,255,.58);margin-bottom:2rem}
-    .dot{width:7px;height:7px;border-radius:50%;background:var(--lime);box-shadow:0 0 18px var(--lime)}
-    h1,h2,h3,p{margin-top:0}
-    h1,h2{font-weight:500;letter-spacing:-.055em;line-height:.98}
-    h1{font-size:clamp(4rem,8vw,8.8rem);margin-bottom:2rem;max-width:980px}
-    h1 em,h2 em{font-family:var(--serif);font-weight:500}
-    h1 em{color:var(--lime);display:block}
-    .hero-intro{font-size:clamp(1rem,1.4vw,1.25rem);color:rgba(255,255,255,.68);max-width:650px}
-    .hero-links{display:flex;flex-wrap:wrap;gap:.85rem;margin-top:2.3rem}
-    .button{display:inline-flex;align-items:center;gap:1.2rem;text-decoration:none;font-size:.78rem;font-weight:600;padding:.88rem 1rem;border:1px solid rgba(255,255,255,.28)}
-    .button.primary{background:var(--lime);color:var(--ink);border-color:var(--lime)}
-    .portrait{justify-self:end;width:min(100%,330px);aspect-ratio:1;border:1px solid rgba(255,255,255,.15);padding:1rem;position:relative}
-    .portrait img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.03)}
-    .portrait:after{content:"Warsaw · PL";position:absolute;right:1rem;bottom:-2rem;font:400 .62rem var(--mono);letter-spacing:.1em;color:rgba(255,255,255,.45);text-transform:uppercase}
-    section{padding-block:clamp(4.5rem,9vw,8rem)}
-    .section-head{display:grid;grid-template-columns:.55fr 1.45fr;gap:6vw;align-items:start;margin-bottom:4rem}
-    .section-head h2{font-size:clamp(3rem,6vw,6.6rem);margin:0}
-    .section-head h2 em{color:var(--teal)}
-    .section-head p{max-width:52ch;color:#4d5755;font-size:1.05rem;margin-top:.7rem}
-    .about{background:var(--warm)}
-    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:6vw;border-top:1px solid var(--ink);padding-top:2.2rem}
-    .lead{font-size:clamp(1.5rem,2.3vw,2.2rem);line-height:1.35;letter-spacing:-.03em;max-width:24ch}
-    .about-copy{color:#4c5754;max-width:62ch}
-    .tags{display:flex;flex-wrap:wrap;gap:.65rem;margin-top:2rem}
-    .tag{font:400 .66rem var(--mono);text-transform:uppercase;letter-spacing:.07em;border:1px solid var(--line);padding:.55rem .7rem;background:rgba(255,255,255,.25)}
-    .work{background:var(--paper)}
-    .work-grid{display:grid;grid-template-columns:repeat(2,1fr);border-top:1px solid var(--ink);border-left:1px solid var(--line)}
-    .card{min-height:310px;padding:1.5rem;display:flex;flex-direction:column;justify-content:space-between;border-right:1px solid var(--line);border-bottom:1px solid var(--line);text-decoration:none;transition:background .18s ease,transform .18s ease}
-    a.card:hover{background:var(--lime)}
-    .card-index{color:var(--teal)}
-    .card h3{font-size:clamp(1.7rem,2.6vw,2.6rem);font-weight:500;letter-spacing:-.045em;line-height:1.05;margin:1rem 0}
-    .card p{color:#52605c;max-width:44ch;margin-bottom:1.5rem}
-    .card-foot{display:flex;align-items:center;justify-content:space-between;gap:1rem;font:400 .64rem var(--mono);letter-spacing:.06em;text-transform:uppercase}
-    .card-foot span:last-child{font-size:1.1rem;color:var(--teal)}
-    .systems{background:var(--ink);color:var(--paper)}
-    .systems .section-head p{color:rgba(255,255,255,.58)}
-    .systems .section-head h2 em{color:var(--lime)}
-    .system-list{list-style:none;padding:0;margin:0;border-top:1px solid rgba(255,255,255,.16)}
-    .system-list li{display:grid;grid-template-columns:.22fr .78fr 1fr;gap:2rem;padding:1.5rem 0;border-bottom:1px solid rgba(255,255,255,.14);align-items:baseline}
-    .system-list .no{color:var(--lime)}
-    .system-list strong{font-size:1.35rem;font-weight:500;letter-spacing:-.03em}
-    .system-list p{margin:0;color:rgba(255,255,255,.56);max-width:60ch}
-    .contact{background:var(--lime)}
-    .contact-grid{display:grid;grid-template-columns:.4fr 1.2fr .4fr;gap:4vw;align-items:end}
-    .contact h2{font-size:clamp(4rem,9vw,9rem);margin:0}
-    .contact h2 em{display:block;color:var(--teal)}
-    .contact-links{display:grid;gap:.5rem;justify-items:start}
-    .contact-links a{text-decoration:none;border-bottom:1px solid;padding-bottom:.2rem;font-size:.9rem}
-    footer{background:var(--ink);color:rgba(255,255,255,.48);padding:1.2rem var(--pad);display:flex;justify-content:space-between;gap:1rem;font:400 .61rem var(--mono);letter-spacing:.06em;text-transform:uppercase}
-    @media (max-width:900px){
-      .hero-grid{grid-template-columns:1fr;padding-block:5.5rem 6rem}
-      .portrait{justify-self:start;width:210px}
-      .section-head,.about-grid,.contact-grid{grid-template-columns:1fr}
-      .work-grid{grid-template-columns:1fr}
-      .system-list li{grid-template-columns:auto 1fr}.system-list p{grid-column:2}
-      .contact-links{margin-top:2rem}
-    }
-    @media (max-width:620px){
-      .site-header{height:72px}.hero{padding-top:72px}.hero:before{inset:72px 0 0}
-      .nav a:not(.cta){display:none}
-      h1{font-size:clamp(3.3rem,17vw,5.1rem)}
-      .portrait{display:none}
-      .hero-grid{min-height:610px}
-      .section-head{margin-bottom:2.5rem}
-      .card{min-height:280px}
-      footer{flex-direction:column}
-    }
-  </style>
+  <title>Michał Domaradzki — Insight Terrain</title>
+  <meta name="description" content="Michał Domaradzki turns data into insight and builds systems that create clarity, impact, and scale.">
+  <meta property="og:title" content="Michał Domaradzki">
+  <meta property="og:description" content="Data into insight. Systems that create clarity, impact, and scale.">
+  <link rel="stylesheet" href="styles.css">
+  <script>document.documentElement.classList.add("js");</script>
 </head>
 <body>
-  <header class="site-header">
-    <a class="brand" href="#top">Michał Domaradzki<small>Data · BI · Applied AI</small></a>
-    <nav class="nav" aria-label="Primary navigation">
-      <a href="#work">Work</a>
-      <a href="https://github.com/datawarsaw">GitHub</a>
-      <a class="cta" href="https://www.linkedin.com/in/domaradzki-michal/">LinkedIn ↗</a>
-    </nav>
-  </header>
+  <a class="it-skip" href="#main">Skip to content</a>
 
-  <main id="top">
-    <section class="hero">
-      <div class="wrap hero-grid">
-        <div>
-          <div class="eyebrow mono"><span class="dot" aria-hidden="true"></span>Personal portfolio · Warsaw</div>
-          <h1>Data, systems &amp; <em>practical AI.</em></h1>
-          <p class="hero-intro">I work at the intersection of analytics, business intelligence, visualization and AI-enabled workflows — turning messy inputs into clear decisions and useful systems.</p>
-          <div class="hero-links">
-            <a class="button primary" href="#work">Selected work <span>↓</span></a>
-            <a class="button" href="https://github.com/datawarsaw">GitHub <span>↗</span></a>
-            <a class="button" href="https://datawarsaw.com">DataWarsaw <span>↗</span></a>
-          </div>
-        </div>
-        <figure class="portrait" aria-label="Portrait of Michał Domaradzki">
-          <img src="https://avatars.githubusercontent.com/u/23432534?v=4" alt="Michał Domaradzki" width="330" height="330">
-        </figure>
-      </div>
-    </section>
+  <div class="it-shell">
+    <header class="it-header">
+      <a class="it-brand" href="#top">
+        <span class="it-brand__mark" aria-hidden="true">
+          <svg viewBox="0 0 24 20" role="presentation" focusable="false">
+            <path d="M4 6 L12 2 L20 6 L12 10 Z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+            <path d="M4 10 L12 14 L20 10" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+            <path d="M4 14 L12 18 L20 14" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <span>domaradzki.com.pl</span>
+      </a>
 
-    <section class="about" id="about">
-      <div class="wrap">
-        <div class="section-head">
-          <div class="mono">01 · Profile</div>
-          <h2>Analysis before <em>decoration.</em></h2>
-        </div>
-        <div class="about-grid">
-          <p class="lead">Senior data analyst building decision-ready BI and small, robust systems around data.</p>
-          <div class="about-copy">
-            <p>My core work is Power BI, SQL and analytical storytelling. Around that, I build practical automation and AI tooling when it genuinely shortens the path from source data to a better decision.</p>
-            <p><strong>DataWarsaw</strong> is the business-facing analytics practice. This site is the personal layer: projects, experiments, working systems and selected earlier work.</p>
-            <div class="tags" aria-label="Core stack">
-              <span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">SQL</span><span class="tag">Databricks</span><span class="tag">Python</span><span class="tag">JavaScript</span><span class="tag">Cloudflare</span><span class="tag">AI Agents</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+      <nav class="it-nav" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="https://datawarsaw.com" target="_blank" rel="noopener noreferrer">Projects</a>
+        <a href="mailto:hello@datawarsaw.com">Speaking</a>
+        <a href="https://datawarsaw.com" target="_blank" rel="noopener noreferrer">Blog</a>
+      </nav>
 
-    <section class="work" id="work">
-      <div class="wrap">
-        <div class="section-head">
-          <div class="mono">02 · Selected work</div>
-          <div>
-            <h2>Public work &amp; <em>experiments.</em></h2>
-            <p>A deliberately small selection from GitHub — current work first, with older analytical projects kept as evidence of the path rather than polished case studies.</p>
-          </div>
-        </div>
-        <div class="work-grid">
-          <a class="card" href="https://datawarsaw.com">
-            <div><span class="card-index mono">01 · Practice</span><h3>DataWarsaw</h3><p>Independent analytics practice focused on decision-ready BI, data storytelling, interactive visualization and applied AI.</p></div>
-            <div class="card-foot"><span>datawarsaw.com</span><span>↗</span></div>
-          </a>
-          <a class="card" href="https://github.com/datawarsaw/world-cup-fantasy-model">
-            <div><span class="card-index mono">02 · Python</span><h3>World Cup Fantasy Pipeline</h3><p>Transparent pandas pipeline for building fantasy shortlists from fixtures, player history, team strength, value and current-form signals.</p></div>
-            <div class="card-foot"><span>GitHub repository</span><span>↗</span></div>
-          </a>
-          <a class="card" href="https://github.com/datawarsaw/Silvano">
-            <div><span class="card-index mono">03 · BI / SQL</span><h3>Power BI + SQL case study</h3><p>An earlier end-to-end analytical exercise with SQL data cleaning, a Power BI model and dashboard artifacts.</p></div>
-            <div class="card-foot"><span>GitHub repository</span><span>↗</span></div>
-          </a>
-          <a class="card" href="https://github.com/datawarsaw/WizualnaAnalitykaDanychPW">
-            <div><span class="card-index mono">04 · Visual analytics</span><h3>Visual Data Analytics</h3><p>Coursework and experiments from visual data analytics studies at Warsaw University of Technology.</p></div>
-            <div class="card-foot"><span>GitHub repository</span><span>↗</span></div>
-          </a>
-        </div>
-      </div>
-    </section>
+      <button class="it-menu" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-menu" data-menu-toggle>
+        <span></span><span></span><span></span>
+      </button>
+    </header>
 
-    <section class="systems">
-      <div class="wrap">
-        <div class="section-head">
-          <div class="mono">03 · Current systems</div>
-          <div><h2>Things I’m <em>building now.</em></h2><p>Not every useful project needs to be a public repository. These are active systems shaping how I work with AI and information.</p></div>
-        </div>
-        <ol class="system-list">
-          <li><span class="no mono">01</span><strong>Agent Platform</strong><p>Reusable infrastructure for agentic development workflows: local workstation operations, code skills, multi-model orchestration and verification-first tooling.</p></li>
-          <li><span class="no mono">02</span><strong>Scout Intelligence</strong><p>An always-on pipeline for source discovery, filtering, AI-assisted triage and structured knowledge capture.</p></li>
-          <li><span class="no mono">03</span><strong>DataWarsaw Website</strong><p>A performance-first public site combining analytics storytelling, interactive data modules, Sanity CMS and Cloudflare infrastructure.</p></li>
-        </ol>
-      </div>
-    </section>
+    <div class="it-menu-panel" id="site-menu" hidden>
+      <a href="#about">About</a>
+      <a href="https://datawarsaw.com" target="_blank" rel="noopener noreferrer">Projects</a>
+      <a href="mailto:hello@datawarsaw.com">Speaking</a>
+      <a href="https://datawarsaw.com" target="_blank" rel="noopener noreferrer">Blog</a>
+    </div>
 
-    <section class="contact" id="contact">
-      <div class="wrap contact-grid">
-        <div class="mono">04 · Contact</div>
-        <h2>Find me <em>online.</em></h2>
-        <div class="contact-links">
-          <a href="https://www.linkedin.com/in/domaradzki-michal/">LinkedIn ↗</a>
-          <a href="https://github.com/datawarsaw">GitHub ↗</a>
-          <a href="https://datawarsaw.com">DataWarsaw ↗</a>
+    <main id="main">
+      <section class="it-hero" id="top" aria-labelledby="hero-title" data-stage>
+        <div class="it-hero__copy" id="about">
+          <h1 class="it-name" id="hero-title" data-intro="1">
+            <span>Michał</span>
+            <span>Domaradzki</span>
+          </h1>
+          <p class="it-lede" data-intro="2">
+            <span class="it-lede__rule" aria-hidden="true"></span>
+            I turn data into insight and build systems that create clarity, impact, and scale.
+          </p>
+          <nav class="it-actions" aria-label="Professional links" data-intro="3">
+            <a class="it-pill" href="https://www.linkedin.com/in/domaradzki-michal/" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.2 14H2V5.8h2.2V14zM3.1 4.8A1.3 1.3 0 1 1 3.1 2a1.3 1.3 0 0 1 0 2.8zM14 14h-2.2V9.6c0-1.1-.4-1.8-1.3-1.8-.7 0-1.1.5-1.3 1v5.2H7V5.8h2.1v1.1c.3-.6 1.1-1.3 2.3-1.3 1.7 0 2.6 1.1 2.6 3.4V14z"/></svg>
+              LinkedIn
+            </a>
+            <a class="it-pill" href="https://datawarsaw.com" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+                <circle cx="8" cy="3" r="1.5" fill="currentColor"/>
+                <circle cx="3" cy="8" r="1.5" fill="currentColor"/>
+                <circle cx="8" cy="8" r="2.2" fill="currentColor"/>
+                <circle cx="13" cy="8" r="1.5" fill="currentColor"/>
+                <circle cx="8" cy="13" r="1.5" fill="currentColor"/>
+                <line x1="8" y1="3" x2="8" y2="13" stroke="currentColor" stroke-width="1" opacity=".4"/>
+                <line x1="3" y1="8" x2="13" y2="8" stroke="currentColor" stroke-width="1" opacity=".4"/>
+              </svg>
+              DataWarsaw
+            </a>
+            <a class="it-pill" href="https://github.com/datawarsaw" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M8 1.5A6.5 6.5 0 0 0 5.8 14c.3.1.5-.2.5-.4v-1.4c-2 .4-2.4-1-2.4-1-.3-.8-.8-1-.8-1-.6-.4 0-.4 0-.4.7 0 1 .7 1 .7.6 1 1.6.7 2 .5.1-.4.3-.7.5-.9-1.6-.2-3.3-.8-3.3-3.6 0-.8.3-1.5.7-2-.1-.2-.3-1 .1-2s1.1-.3 2.2.4A7 7 0 0 1 8 4.4c.7 0 1.4.1 2 .3 1.1-.7 1.8-.5 2.2-.4s.2 1.8.1 2c.5.5.7 1.2.7 2 0 2.8-1.7 3.4-3.3 3.6.3.2.5.7.5 1.4v2.1c0 .2.2.5.5.4A6.5 6.5 0 0 0 8 1.5z"/></svg>
+              GitHub
+            </a>
+            <a class="it-pill" href="mailto:hello@datawarsaw.com">
+              <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M2 4.2 8 8.4l6-4.2V3H2v1.2zm12 1.4L8 9.8 2 5.6V13h12V5.6z"/></svg>
+              Contact
+            </a>
+          </nav>
         </div>
-      </div>
-    </section>
-  </main>
 
-  <footer><span>© 2026 Michał Domaradzki</span><span>Warsaw, Poland · Built without a framework</span></footer>
+        <div class="it-field" aria-hidden="true" data-field>
+          <svg class="it-field__svg" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMax slice" role="presentation" focusable="false">
+            <defs>
+              <linearGradient id="itSky" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#f7f5f1"/>
+                <stop offset=".38" stop-color="#f4f7f5"/>
+                <stop offset="1" stop-color="#e7f2f0"/>
+              </linearGradient>
+              <radialGradient id="itHazeCool" cx="78%" cy="18%" r="58%">
+                <stop offset="0" stop-color="#d7e3ef" stop-opacity=".42"/>
+                <stop offset="1" stop-color="#fbfcfd" stop-opacity="0"/>
+              </radialGradient>
+              <radialGradient id="itHazeWarm" cx="64%" cy="62%" r="46%">
+                <stop offset="0" stop-color="#eadfce" stop-opacity=".34"/>
+                <stop offset=".7" stop-color="#f4eee6" stop-opacity=".1"/>
+                <stop offset="1" stop-color="#fbfcfd" stop-opacity="0"/>
+              </radialGradient>
+              <linearGradient id="itRidgeFar" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#dce6ef" stop-opacity=".7"/>
+                <stop offset=".5" stop-color="#e8eef4" stop-opacity=".28"/>
+                <stop offset="1" stop-color="#fbfcfd" stop-opacity=".02"/>
+              </linearGradient>
+              <linearGradient id="itRidgeArea" x1=".1" y1="0" x2=".8" y2="1">
+                <stop offset="0" stop-color="#c5d4e3" stop-opacity=".55"/>
+                <stop offset=".45" stop-color="#d7e1eb" stop-opacity=".28"/>
+                <stop offset="1" stop-color="#f6f9fc" stop-opacity=".04"/>
+              </linearGradient>
+              <linearGradient id="itRidgeMid" x1="0" y1="0" x2=".7" y2="1">
+                <stop offset="0" stop-color="#9db0c4" stop-opacity=".62"/>
+                <stop offset=".38" stop-color="#b7c6d6" stop-opacity=".36"/>
+                <stop offset="1" stop-color="#eef3f7" stop-opacity=".06"/>
+              </linearGradient>
+              <linearGradient id="itRidgeWarm" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#e2d3bf" stop-opacity=".58"/>
+                <stop offset=".4" stop-color="#eadfce" stop-opacity=".32"/>
+                <stop offset="1" stop-color="#f7f1e8" stop-opacity=".06"/>
+              </linearGradient>
+              <linearGradient id="itRidgeDeep" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#7f96ad" stop-opacity=".5"/>
+                <stop offset=".42" stop-color="#a8b9cb" stop-opacity=".28"/>
+                <stop offset="1" stop-color="#eef3f7" stop-opacity=".05"/>
+              </linearGradient>
+              <linearGradient id="itRidgeFront" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#c9d5e2" stop-opacity=".48"/>
+                <stop offset=".5" stop-color="#e3eaf1" stop-opacity=".22"/>
+                <stop offset="1" stop-color="#fbfcfd" stop-opacity=".04"/>
+              </linearGradient>
+              <linearGradient id="itLineGrad" x1="0" y1="1" x2="1" y2="0">
+                <stop offset="0" stop-color="#6d849a" stop-opacity=".45"/>
+                <stop offset=".35" stop-color="#2b4258" stop-opacity=".82"/>
+                <stop offset="1" stop-color="#1b2d42" stop-opacity=".95"/>
+              </linearGradient>
+              <linearGradient id="itSheetFill" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#ffffff" stop-opacity=".38"/>
+                <stop offset=".55" stop-color="#f7fafc" stop-opacity=".12"/>
+                <stop offset="1" stop-color="#e8eef5" stop-opacity=".05"/>
+              </linearGradient>
+              <linearGradient id="itInsightWash" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0" stop-color="#9bb0c4" stop-opacity=".08"/>
+                <stop offset=".45" stop-color="#8aa0b6" stop-opacity=".16"/>
+                <stop offset="1" stop-color="#6f879e" stop-opacity=".05"/>
+              </linearGradient>
+              <pattern id="itMicroGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+                <path d="M40 0H0V40" fill="none" stroke="#d5dee8" stroke-width=".55"/>
+              </pattern>
+              <pattern id="itDotGrid" width="11" height="11" patternUnits="userSpaceOnUse">
+                <circle cx="1.2" cy="1.2" r=".75" fill="#8095aa" opacity=".45"/>
+              </pattern>
+              <pattern id="itFineDots" width="7" height="7" patternUnits="userSpaceOnUse">
+                <circle cx=".8" cy=".8" r=".55" fill="#8aa0b4" opacity=".35"/>
+              </pattern>
+              <filter id="itFarSoft" x="-8%" y="-8%" width="116%" height="116%">
+                <feGaussianBlur stdDeviation="1.6"/>
+              </filter>
+              <filter id="itSheetShadow" x="-18%" y="-12%" width="140%" height="130%">
+                <feDropShadow dx="6" dy="14" stdDeviation="12" flood-color="#182738" flood-opacity=".045"/>
+              </filter>
+              <linearGradient id="itWashAcross" x1="0" y1="0.75" x2="1" y2="0.2">
+                <stop offset="0" stop-color="#fff" stop-opacity=".3"/>
+                <stop offset=".3" stop-color="#fff" stop-opacity=".4"/>
+                <stop offset=".48" stop-color="#fff" stop-opacity=".62"/>
+                <stop offset=".68" stop-color="#fff" stop-opacity=".9"/>
+                <stop offset="1" stop-color="#fff" stop-opacity="1"/>
+              </linearGradient>
+              <mask id="itWashQuietLeft" maskUnits="userSpaceOnUse" x="-120" y="-40" width="1700" height="1000">
+                <rect x="-120" y="-40" width="1700" height="1000" fill="url(#itWashAcross)"/>
+              </mask>
+            </defs>
+
+            <g class="it-scene it-scene--desktop">
+              <g class="it-depth it-depth--atmosphere" data-depth="0.06">
+                <rect width="1440" height="900" fill="url(#itSky)"/>
+                <rect width="1440" height="900" fill="url(#itHazeCool)"/>
+                <rect width="1440" height="900" fill="url(#itHazeWarm)"/>
+                <rect x="430" y="10" width="1010" height="560" fill="url(#itMicroGrid)" opacity=".11"/>
+                <path d="M40 210 C180 190 260 230 390 205" fill="none" stroke="#c5d2df" stroke-width=".6" opacity=".28"/>
+                <path d="M70 248 C210 228 300 268 430 242" fill="none" stroke="#c5d2df" stroke-width=".55" opacity=".18"/>
+              </g>
+
+              <g class="it-depth it-depth--distant" data-depth="0.1" filter="url(#itFarSoft)">
+                <path d="M280 505 C410 458 505 492 610 428 C712 366 792 402 888 338 C980 278 1072 312 1178 236 C1268 178 1350 214 1480 196 L1480 920 L280 920 Z" fill="url(#itRidgeFar)"/>
+                <path d="M280 505 C410 458 505 492 610 428 C712 366 792 402 888 338 C980 278 1072 312 1178 236 C1268 178 1350 214 1480 196" fill="none" stroke="#b7c7d6" stroke-width="1.05" opacity=".35"/>
+              </g>
+
+              <g class="it-depth it-depth--area" data-depth="0.14">
+                <path d="M210 555 C330 508 425 548 528 492 C632 436 718 478 818 422 C922 364 1018 404 1132 348 C1240 298 1338 338 1480 318 L1480 920 L210 920 Z" fill="url(#itRidgeArea)"/>
+                <path d="M210 555 C330 508 425 548 528 492 C632 436 718 478 818 422 C922 364 1018 404 1132 348 C1240 298 1338 338 1480 318" fill="none" stroke="#9eb3c6" stroke-width=".9" opacity=".28"/>
+                <path d="M260 590 C390 548 490 588 600 536 C710 484 810 526 920 478 C1030 430 1140 468 1260 428" fill="none" stroke="#b8c7d6" stroke-width=".7" opacity=".22"/>
+                <path d="M300 625 C430 582 530 624 640 572 C750 520 850 562 960 514 C1070 466 1180 504 1300 464" fill="none" stroke="#b8c7d6" stroke-width=".65" opacity=".16"/>
+              </g>
+
+              <g class="it-depth it-depth--mid" data-depth="0.2">
+                <path d="M150 612 C280 548 385 598 500 528 C612 460 708 512 822 446 C932 384 1036 432 1160 368 C1268 318 1360 356 1480 338 L1480 920 L150 920 Z" fill="url(#itRidgeMid)"/>
+                <path d="M150 612 C280 548 385 598 500 528 C612 460 708 512 822 446 C932 384 1036 432 1160 368 C1268 318 1360 356 1480 338" fill="none" stroke="#6f879e" stroke-width="1.15" opacity=".42"/>
+                <path d="M500 528 C560 560 610 610 652 678 C610 690 548 640 500 528 Z" fill="#6d849c" opacity=".08"/>
+                <path d="M822 446 C888 492 948 556 996 638 C948 652 872 572 822 446 Z" fill="#5d7690" opacity=".1"/>
+                <path d="M1160 368 C1228 422 1288 488 1336 568 C1280 578 1204 488 1160 368 Z" fill="#617a94" opacity=".09"/>
+              </g>
+
+              <g class="it-depth it-depth--architecture" data-depth="0.28">
+                <g filter="url(#itSheetShadow)" opacity=".78">
+                  <polygon points="786,18 1098,-38 1098,742 786,798" fill="url(#itSheetFill)" stroke="rgba(148,168,188,.34)" stroke-width="1"/>
+                  <line x1="842" y1="46" x2="842" y2="776" stroke="#9bb1c7" stroke-width=".55" stroke-dasharray="3 5" opacity=".42"/>
+                  <line x1="926" y1="30" x2="926" y2="760" stroke="#8ca3ba" stroke-width=".55" opacity=".32"/>
+                  <line x1="1014" y1="12" x2="1014" y2="742" stroke="#9bb1c7" stroke-width=".55" stroke-dasharray="2 6" opacity=".38"/>
+                  <path d="M786 168 C890 148 990 132 1098 108" fill="none" stroke="#8fa6bd" stroke-width=".7" opacity=".28"/>
+                  <path d="M786 258 C890 236 990 214 1098 186" fill="none" stroke="#8fa6bd" stroke-width=".7" opacity=".22"/>
+                  <path d="M786 352 C890 326 990 300 1098 268" fill="none" stroke="#8fa6bd" stroke-width=".65" opacity=".18"/>
+                </g>
+                <g filter="url(#itSheetShadow)" opacity=".7">
+                  <polygon points="1118,8 1478,-48 1478,628 1118,684" fill="url(#itSheetFill)" stroke="rgba(148,168,188,.3)" stroke-width="1"/>
+                  <line x1="1192" y1="28" x2="1192" y2="662" stroke="#9bb1c7" stroke-width=".55" opacity=".34"/>
+                  <line x1="1288" y1="12" x2="1288" y2="646" stroke="#9bb1c7" stroke-width=".55" stroke-dasharray="2 5" opacity=".32"/>
+                  <line x1="1384" y1="-4" x2="1384" y2="630" stroke="#9bb1c7" stroke-width=".55" opacity=".26"/>
+                </g>
+                <g opacity=".42">
+                  <polygon points="620,90 742,68 742,430 620,452" fill="url(#itSheetFill)" stroke="rgba(148,168,188,.22)" stroke-width=".8"/>
+                </g>
+              </g>
+
+              <g class="it-depth it-depth--warm" data-depth="0.32">
+                <path d="M90 668 C220 598 332 648 448 572 C562 498 668 556 786 490 C900 428 1010 478 1138 418 C1250 368 1350 412 1480 396 L1480 920 L90 920 Z" fill="url(#itRidgeWarm)"/>
+                <path d="M90 668 C220 598 332 648 448 572 C562 498 668 556 786 490 C900 428 1010 478 1138 418 C1250 368 1350 412 1480 396" fill="none" stroke="#cbb59a" stroke-width="1.1" opacity=".42"/>
+                <path d="M180 702 C310 642 430 688 548 628 C666 568 780 616 898 566 C1016 516 1138 554 1260 516" fill="none" stroke="#d8c6b0" stroke-width=".8" opacity=".34"/>
+                <path d="M220 736 C350 676 470 722 588 662 C706 602 820 650 938 600 C1056 550 1178 588 1300 550" fill="none" stroke="#d8c6b0" stroke-width=".7" opacity=".22"/>
+                <path d="M448 572 C508 618 562 678 604 748 C556 758 492 688 448 572 Z" fill="#c4ab8e" opacity=".12"/>
+                <path d="M786 490 C852 542 914 610 962 690 C910 702 832 612 786 490 Z" fill="#c0a584" opacity=".12"/>
+              </g>
+
+              <g class="it-depth it-depth--chart" data-depth="0.18">
+                <g opacity=".94">
+                  <line x1="48" y1="522" x2="520" y2="522" stroke="#7f9ab2" stroke-width=".9" stroke-dasharray="2 5"/>
+                  <line x1="48" y1="562" x2="520" y2="562" stroke="#7f9ab2" stroke-width=".9" stroke-dasharray="2 5"/>
+                  <line x1="48" y1="602" x2="520" y2="602" stroke="#7f9ab2" stroke-width=".9" stroke-dasharray="2 5"/>
+                  <line x1="48" y1="642" x2="520" y2="642" stroke="#7f9ab2" stroke-width=".9" stroke-dasharray="2 5"/>
+                  <line x1="48" y1="682" x2="520" y2="682" stroke="#68849d" stroke-width="1.2"/>
+                  <g font-size="9.5" fill="#4e657c" text-anchor="end" font-family="Avenir Next, Segoe UI, sans-serif">
+                    <text x="38" y="525.2">80</text>
+                    <text x="38" y="565.2">60</text>
+                    <text x="38" y="605.2">40</text>
+                    <text x="38" y="645.2">20</text>
+                    <text x="38" y="685.2">0</text>
+                  </g>
+                  <rect x="72" y="640.4" width="7" height="41.6" fill="#c5d4e3" opacity=".42"/>
+                  <rect x="81" y="653.2" width="7" height="28.8" fill="#e6d6c2" opacity=".38"/>
+                  <rect x="106" y="621.2" width="7" height="60.8" fill="#c5d4e3" opacity=".4"/>
+                  <rect x="115" y="634" width="7" height="48" fill="#e6d6c2" opacity=".36"/>
+                  <rect x="140" y="629.2" width="7" height="52.8" fill="#c5d4e3" opacity=".38"/>
+                  <rect x="149" y="645.2" width="7" height="36.8" fill="#e6d6c2" opacity=".34"/>
+                  <rect x="174" y="594" width="7" height="88" fill="#b7c8d8" opacity=".46"/>
+                  <rect x="183" y="616.4" width="7" height="65.6" fill="#e0cfb8" opacity=".4"/>
+                  <rect x="208" y="610" width="7" height="72" fill="#c5d4e3" opacity=".4"/>
+                  <rect x="217" y="627.6" width="7" height="54.4" fill="#e6d6c2" opacity=".36"/>
+                  <rect x="242" y="573.2" width="7" height="108.8" fill="#b0c4d6" opacity=".5"/>
+                  <rect x="251" y="597.2" width="7" height="84.8" fill="#decbb4" opacity=".42"/>
+                  <rect x="276" y="584.4" width="7" height="97.6" fill="#c5d4e3" opacity=".44"/>
+                  <rect x="285" y="605.2" width="7" height="76.8" fill="#e6d6c2" opacity=".38"/>
+                  <rect x="310" y="554" width="7" height="128" fill="#a8bdd0" opacity=".52"/>
+                  <rect x="319" y="578" width="7" height="104" fill="#d9c2a8" opacity=".46"/>
+                  <rect x="344" y="566.8" width="7" height="115.2" fill="#b7c8d8" opacity=".48"/>
+                  <rect x="353" y="587.6" width="7" height="94.4" fill="#decbb4" opacity=".42"/>
+                  <rect x="378" y="538" width="7" height="144" fill="#9fb6cb" opacity=".54"/>
+                  <rect x="387" y="562" width="7" height="120" fill="#d6bea2" opacity=".48"/>
+                  <rect x="412" y="549.2" width="7" height="132.8" fill="#b7c8d8" opacity=".5"/>
+                  <rect x="421" y="571.6" width="7" height="110.4" fill="#decbb4" opacity=".44"/>
+                  <rect x="446" y="522" width="7" height="160" fill="#95adc4" opacity=".56"/>
+                  <rect x="455" y="547.6" width="7" height="134.4" fill="#d2b896" opacity=".5"/>
+                  <g font-size="8" fill="#566e84" text-anchor="middle" letter-spacing=".08em" font-family="Avenir Next, Segoe UI, sans-serif">
+                    <text x="79" y="696.4">JAN</text>
+                    <text x="113" y="696.4">FEB</text>
+                    <text x="147" y="696.4">MAR</text>
+                    <text x="181" y="696.4">APR</text>
+                    <text x="215" y="696.4">MAY</text>
+                    <text x="249" y="696.4">JUN</text>
+                    <text x="283" y="696.4">JUL</text>
+                    <text x="317" y="696.4">AUG</text>
+                    <text x="351" y="696.4">SEP</text>
+                    <text x="385" y="696.4">OCT</text>
+                    <text x="419" y="696.4">NOV</text>
+                    <text x="453" y="696.4">DEC</text>
+                  </g>
+                  <path d="M79 650 C113 640.4 147 658 181 629.2 C215 605.2 249 616.4 283 594 C317 573.2 351 584.4 385 554 C419 538 453 530 479 509.2" fill="none" stroke="#9bb0c4" stroke-width="1.05" opacity=".55"/>
+                  <path d="M79 662.8 C120 656.4 160 674 210 645.2 C260 618 310 630.8 360 602 C410 578 450 570 490 549.2" fill="none" stroke="#cbb59a" stroke-width=".9" stroke-dasharray="3 4" opacity=".4"/>
+                  <circle cx="181" cy="629.2" r="2.1" fill="#4d6780"/>
+                  <circle cx="283" cy="594" r="2.1" fill="#4d6780"/>
+                  <circle cx="385" cy="554" r="2.2" fill="#4d6780"/>
+                  <g transform="translate(48,722)" font-family="Avenir Next, Segoe UI, sans-serif">
+                    <text x="0" y="107.6" font-size="8.5" fill="#4d647a" letter-spacing=".12em">data</text>
+                    <text x="0" y="117.2" font-size="8.5" fill="#4d647a" letter-spacing=".12em">driven</text>
+                    <text x="0" y="126.8" font-size="8.5" fill="#4d647a" letter-spacing=".12em">decisions</text>
+                    <line x1="78" y1="112.4" x2="118" y2="112.4" stroke="#33506d" stroke-width="2"/>
+                    <line x1="78" y1="118.8" x2="108" y2="118.8" stroke="#d49e72" stroke-width="2"/>
+                  </g>
+                </g>
+              </g>
+
+              <g class="it-depth it-depth--deep" data-depth="0.38">
+                <path d="M40 728 C170 658 292 712 412 640 C532 568 648 628 768 562 C886 498 1004 554 1132 492 C1248 438 1352 486 1480 468 L1480 920 L40 920 Z" fill="url(#itRidgeDeep)"/>
+                <path d="M40 728 C170 658 292 712 412 640 C532 568 648 628 768 562 C886 498 1004 554 1132 492 C1248 438 1352 486 1480 468" fill="none" stroke="#5d7690" stroke-width="1.05" opacity=".38"/>
+                <path d="M120 758 C250 698 370 744 490 688 C610 632 730 678 850 628 C970 578 1090 618 1210 578" fill="none" stroke="#8aa0b4" stroke-width=".7" opacity=".22"/>
+              </g>
+
+              <g class="it-depth it-depth--front" data-depth="0.46">
+                <path d="M-10 792 C130 732 258 776 386 718 C514 660 638 712 762 662 C886 612 1010 658 1138 612 C1260 570 1364 608 1490 592 L1490 940 L-10 940 Z" fill="url(#itRidgeFront)"/>
+                <path d="M-10 792 C130 732 258 776 386 718 C514 660 638 712 762 662 C886 612 1010 658 1138 612 C1260 570 1364 608 1490 592" fill="none" stroke="#88a1b8" stroke-width=".95" opacity=".32"/>
+                <rect x="1088" y="628" width="352" height="252" fill="url(#itDotGrid)" opacity=".28"/>
+                <rect x="980" y="430" width="150" height="170" fill="url(#itFineDots)" opacity=".16"/>
+                <g opacity=".84">
+                  <path d="M638 742 L704 688 L786 716 L868 648 L952 682 L1048 628" fill="none" stroke="#718b9f" stroke-width=".95"/>
+                  <path d="M704 688 L762 642 L838 668 L868 648 M838 668 L910 722 L952 682" fill="none" stroke="#718b9f" stroke-width=".85" opacity=".7"/>
+                  <circle cx="638" cy="742" r="2.8" fill="#2d4862"/>
+                  <circle cx="704" cy="688" r="3.6" fill="#203448"/>
+                  <circle cx="786" cy="716" r="2.6" fill="#2d4862"/>
+                  <circle cx="868" cy="648" r="4.1" fill="#1b2c3d"/>
+                  <circle cx="952" cy="682" r="3.1" fill="#2d4862"/>
+                  <circle cx="1048" cy="628" r="2.7" fill="#2d4862"/>
+                  <circle cx="762" cy="642" r="2.4" fill="#3a5673"/>
+                  <circle cx="838" cy="668" r="2.8" fill="#2d4862"/>
+                  <circle cx="910" cy="722" r="2.4" fill="#3a5673"/>
+                  <circle cx="868" cy="648" r="7.2" fill="none" stroke="#d49e72" stroke-width="1.05" opacity=".7"/>
+                </g>
+              </g>
+
+              <image class="it-wash" href="assets/warsaw-wash.webp" x="-70" y="-8" width="1460" height="860" opacity="0.88" mask="url(#itWashQuietLeft)" preserveAspectRatio="xMidYMid meet"/>
+
+              <g class="it-depth it-depth--line" data-depth="0.52">
+                <path d="M79 688 C150 672 210 702 283 618 C360 548 448 572 548 528 C640 490 732 452 822 392 C910 336 1010 292 1118 248 C1228 202 1338 162 1468 128" fill="url(#itInsightWash)" stroke="none" opacity=".35"/>
+                <path d="M79 688 C150 672 210 702 283 618 C360 548 448 572 548 528 C640 490 732 452 822 392 C910 336 1010 292 1118 248 C1228 202 1338 162 1468 128" fill="none" stroke="#a8bdd2" stroke-width="5.2" opacity=".16"/>
+                <path d="M79 688 C150 672 210 702 283 618 C360 548 448 572 548 528 C640 490 732 452 822 392 C910 336 1010 292 1118 248 C1228 202 1338 162 1468 128" fill="none" stroke="url(#itLineGrad)" stroke-width="2.15" stroke-linecap="round"/>
+                <path d="M120 720 C250 682 380 724 510 668 C640 612 770 652 900 606 C1030 560 1160 592 1290 552" fill="none" stroke="#8aa0b4" stroke-width=".7" opacity=".18"/>
+                <path d="M210 640 C340 602 470 646 600 590 C730 534 860 572 990 528" fill="none" stroke="#8aa0b4" stroke-width=".65" opacity=".14"/>
+                <circle cx="79" cy="688" r="3.1" fill="#243850"/>
+                <circle cx="283" cy="618" r="3.2" fill="#243850"/>
+                <circle cx="548" cy="528" r="3.6" fill="#203448"/>
+                <circle cx="822" cy="392" r="8.8" fill="none" stroke="#203448" stroke-width="1.25" opacity=".8"/>
+                <circle cx="822" cy="392" r="4.1" fill="#ffffff" stroke="#203448" stroke-width="2.1"/>
+                <line x1="822" y1="402" x2="822" y2="762" stroke="#294056" stroke-width=".9" stroke-dasharray="3 5" opacity=".38"/>
+                <circle cx="822" cy="762" r="2.1" fill="#294056"/>
+                <circle cx="1118" cy="248" r="3.5" fill="#1b2c3d"/>
+                <line x1="1118" y1="254" x2="1118" y2="512" stroke="#889eb0" stroke-width=".7" stroke-dasharray="2 5" opacity=".28"/>
+                <circle cx="1468" cy="128" r="3" fill="#1b2c3d"/>
+                <g opacity=".62">
+                  <path d="M1218 146 L1272 104 L1338 128 L1398 78 L1458 118" fill="none" stroke="#718b9f" stroke-width="1"/>
+                  <path d="M1272 104 L1316 68 L1398 78 M1338 128 L1372 162 L1418 142" fill="none" stroke="#718b9f" stroke-width=".9" opacity=".7"/>
+                  <circle cx="1218" cy="146" r="2.7" fill="#2d4862"/>
+                  <circle cx="1272" cy="104" r="3.4" fill="#203448"/>
+                  <circle cx="1338" cy="128" r="2.7" fill="#2d4862"/>
+                  <circle cx="1398" cy="78" r="4.2" fill="#d49e72"/>
+                  <circle cx="1398" cy="78" r="7.6" fill="none" stroke="#d49e72" stroke-width="1" opacity=".7"/>
+                  <circle cx="1458" cy="118" r="2.7" fill="#2d4862"/>
+                  <circle cx="1316" cy="68" r="2.2" fill="#3a5673"/>
+                  <circle cx="1372" cy="162" r="2.2" fill="#3a5673"/>
+                  <circle cx="1418" cy="142" r="2.2" fill="#3a5673"/>
+                </g>
+                <g fill="#7d93a8" font-family="Avenir Next, Segoe UI, sans-serif" font-size="8" letter-spacing=".1em" opacity=".42">
+                  <text x="834" y="384">apex</text>
+                  <text x="1128" y="242">1.00</text>
+                  <text x="560" y="518">0.64</text>
+                </g>
+                <g stroke="#9bb1c7" stroke-width=".6" opacity=".22">
+                  <line x1="548" y1="534" x2="548" y2="728"/>
+                  <line x1="640" y1="120" x2="640" y2="210"/>
+                  <line x1="980" y1="86" x2="980" y2="168"/>
+                </g>
+              </g>
+            </g>
+
+            <g class="it-scene it-scene--mobile">
+              <g class="it-depth" data-depth="0.08">
+                <rect width="1440" height="900" fill="url(#itSky)"/>
+                <rect x="180" y="20" width="1140" height="860" fill="url(#itMicroGrid)" opacity=".1"/>
+                <rect width="1440" height="900" fill="url(#itHazeCool)"/>
+              </g>
+
+              <g class="it-depth" data-depth="0.14">
+                <path d="M80 320 C240 240 400 300 560 240 C730 176 880 120 1060 168 C1220 212 1320 280 1460 250 V900H80Z" fill="url(#itRidgeFar)"/>
+                <path d="M70 430 C240 340 420 420 600 360 C780 304 930 250 1110 300 C1260 340 1360 420 1470 380 V900H70Z" fill="url(#itRidgeArea)"/>
+              </g>
+              <g class="it-depth" data-depth="0.28">
+                <path d="M50 540 C230 450 420 540 620 470 C820 404 980 360 1160 410 C1300 450 1380 530 1480 500 V900H50Z" fill="url(#itRidgeWarm)"/>
+                <path d="M40 650 C230 560 430 650 640 590 C840 536 1000 500 1180 550 C1320 590 1400 670 1490 640 V900H40Z" fill="url(#itRidgeDeep)"/>
+              </g>
+              <image class="it-wash" href="assets/warsaw-wash.webp" x="40" y="180" width="1360" height="700" opacity="0.74" preserveAspectRatio="xMidYMid meet"/>
+              <g class="it-depth" data-depth="0.4">
+                <path d="M190 680 C360 630 520 660 680 570 S980 360 1180 280" fill="none" stroke="url(#itLineGrad)" stroke-width="2"/>
+                <circle cx="520" cy="650" r="3.2" fill="#203448"/>
+                <circle cx="860" cy="430" r="4.4" fill="#ffffff" stroke="#203448" stroke-width="2"/>
+                <circle cx="1180" cy="280" r="3.4" fill="#1b2c3d"/>
+                <g opacity=".5">
+                  <path d="M760 520 L830 470 L910 498 L990 436 L1080 474" fill="none" stroke="#718b9f" stroke-width="1"/>
+                  <circle cx="760" cy="520" r="3"/><circle cx="830" cy="470" r="4"/><circle cx="910" cy="498" r="2.5"/><circle cx="990" cy="436" r="4.2"/><circle cx="1080" cy="474" r="3"/>
+                </g>
+              </g>
+            </g>
+          </svg>
+
+          <article class="it-plane it-plane--insight" data-intro="4" tabindex="0">
+            <p>insight</p>
+            <strong>0.86</strong>
+            <svg viewBox="0 0 120 36" aria-hidden="true"><path d="M4 24 C18 22 28 18 38 20 S58 28 70 16 90 10 104 8 116 8 116 8"/><circle cx="104" cy="8" r="2.2"/></svg>
+          </article>
+
+          <article class="it-plane it-plane--systems" data-intro="5" tabindex="0">
+            <p>systems thinking</p>
+            <svg viewBox="0 0 140 70" aria-hidden="true">
+              <path d="M18 50 L48 24 L80 42 L114 16"/>
+              <path d="M48 24 L70 12 L96 28"/>
+              <path d="M80 42 L96 28 L126 34"/>
+              <circle cx="18" cy="50" r="3"/><circle cx="48" cy="24" r="3"/><circle cx="80" cy="42" r="3"/><circle cx="114" cy="16" r="4"/><circle cx="70" cy="12" r="2.2"/><circle cx="96" cy="28" r="2.2"/><circle cx="126" cy="34" r="2.4"/>
+            </svg>
+          </article>
+
+          <article class="it-plane it-plane--impact" data-intro="6" tabindex="0">
+            <p>impact<br>through<br>structure</p>
+          </article>
+
+          <article class="it-plane it-plane--quality" data-intro="7" tabindex="0">
+            <p>quality<br>over noise</p>
+            <span class="it-dots"></span>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="it-footer">
+      <p>© 2026 Michał Domaradzki</p>
+      <p>Warsaw · insight as terrain</p>
+      <a href="mailto:hello@datawarsaw.com">hello@datawarsaw.com</a>
+    </footer>
+  </div>
+
+  <script src="app.js" defer></script>
 </body>
 </html>
