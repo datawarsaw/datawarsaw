@@ -234,6 +234,7 @@ a { color: inherit; }
   z-index: 4;
   width: min(42rem, 44vw);
   padding: clamp(2.6rem, 6vh, 5.2rem) var(--it-gutter) var(--it-space-10);
+  container: hero-copy / inline-size;
 }
 
 .it-name {
@@ -249,21 +250,59 @@ a { color: inherit; }
 .it-name span { display: block; }
 
 .it-lede {
-  width: min(28rem, 100%);
+  width: min(100%, 36rem);
   margin: var(--it-space-8) 0 0;
   display: grid;
   grid-template-columns: auto 1fr;
   gap: var(--it-space-4);
   color: var(--it-steel);
-  font-size: clamp(1.02rem, 1.2vw, 1.18rem);
-  line-height: 1.55;
+  align-items: start;
 }
 
 .it-lede__rule {
   width: 2px;
-  height: 2.4rem;
-  margin-block-start: 0.2rem;
+  align-self: stretch;
+  margin-block: 0.2rem 0.12rem;
   background: var(--it-line);
+}
+
+.it-statement {
+  display: flex;
+  flex-direction: column;
+  gap: 0.16em;
+  color: var(--it-navy);
+  font-family: var(--it-font-display);
+  font-size: 1.2rem;
+  font-size: clamp(1.05rem, 4.35cqi, 1.62rem);
+  font-weight: 400;
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+}
+
+.it-statement__line {
+  display: block;
+  text-wrap: nowrap;
+  white-space: nowrap;
+}
+
+.it-statement em {
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.it-statement__soft {
+  position: relative;
+  top: -0.04em;
+  margin-inline: 0.06em;
+  color: var(--it-muted);
+  font-family: var(--it-font-sans);
+  font-size: 0.74em;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  text-transform: none;
 }
 
 .it-actions {
